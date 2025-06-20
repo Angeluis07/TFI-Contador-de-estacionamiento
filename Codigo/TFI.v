@@ -15,20 +15,21 @@ divisor_1khz div(
   .clk_1khz(clk_div)
 );
 
+
 wire BTN1_debounced;
 
-debounce debounce1(
-  .clk(clk_div),
+antirrebote debounce1(
+  .clk_slow(clk_div),
   .btn_in(BTN1),
-  .btn_out(BTN1_debounced)
+  .btn_stable(BTN1_debounced)
 );
 
 wire BTN4_debounced;
 
-debounce debounce2(
-  .clk(clk_div),
+antirrebote debounce2(
+  .clk_slow(clk_div),
   .btn_in(BTN4),
-  .btn_out(BTN4_debounced)
+  .btn_stable(BTN4_debounced)
 );
 
 wire s;
