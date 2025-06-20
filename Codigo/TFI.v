@@ -1,7 +1,7 @@
 module TFI(
   input CLK,
-  input BTN1,
-  input BTN2,
+  input BTN1, //Sensor a
+  input BTN4, //Sensor b
   output wire LED3,
   output wire LED2,
   output wire LED1,
@@ -9,13 +9,13 @@ module TFI(
 );
 
 wire clk_div;
-wire BTN1_debounced;
-wire BTN2_debounced;
 
 divisor_1khz div(
   .clk_12mhz(CLK),
   .clk_1khz(clk_div)
 );
+
+wire BTN1_debounced;
 
 debounce debounce1(
   .clk(clk_div),
@@ -23,33 +23,35 @@ debounce debounce1(
   .btn_out(BTN1_debounced)
 );
 
+wire BTN4_debounced;
+
 debounce debounce2(
   .clk(clk_div),
-  .btn_in(BTN2),
-  .btn_out(BTN2_debounced)
+  .btn_in(BTN4),
+  .btn_out(BTN4_debounced)
 );
 
 wire s;
 wire r;
 
 FSM_3FFD_IOCars fsm(
-  .clk(clk),
+  .clk(CLK),
   .a(BTN1_debounced),
-  .b(BTN2_debounced),
+  .b(BTN4_debounced),
   .S(s),
   .R(r)
 );
 
-wire leds[3:0];
+wire [2:0] leds;
 
 contador_ascendente_descendente contador(
-  .clk(clk),
+  .clk(CLK),
   .r(r),
   .s(s),
   .leds(leds)
 );
 
-assign LED3 = leds[3];
+assign LED3 = 1'b0; // LED3 siempre apagado
 assign LED2 = leds[2];
 assign LED1 = leds[1];
 assign LED0 = leds[0];

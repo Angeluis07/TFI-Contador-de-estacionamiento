@@ -1,5 +1,5 @@
 
-module TFI(
+module TFI_m(
   input CLK,
   input BTN1,
   input BTN2,

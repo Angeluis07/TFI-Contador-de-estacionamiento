@@ -15,24 +15,11 @@ assign D1 = (~r & Q1 & ~Q0) | (~s & Q1 & Q0) | (~s & r & Q2 & ~Q1 & ~Q0) |
 assign D0 = (~s & ~r & Q0) | (~s & r & Q1 & ~Q0) | (~s & r & Q2 & ~Q0) | 
             (s & ~r & Q2 & Q1) | (s & ~r & ~Q0);
 
-FF_D ffd_2(
-    .D(D2),
-    .clk(clk),
-    .Q(Q2)
-);
-FF_D ffd_1(
-    .D(D1),
-    .clk(clk),
-    .Q(Q1)
-);
-FF_D ffd_0(
-    .D(D0),
-    .clk(clk),
-    .Q(Q0)
-);     
+FF_D ffd_2(.D(D2), .clk(clk), .Q(Q2), .Qn());
+FF_D ffd_1(.D(D1), .clk(clk), .Q(Q1), .Qn());
+FF_D ffd_0(.D(D0), .clk(clk), .Q(Q0), .Qn());     
 
 assign leds = {Q2, Q1, Q0};
-
 
 
 endmodule

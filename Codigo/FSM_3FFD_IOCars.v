@@ -25,5 +25,6 @@ module FSM_3FFD_IOCars(
 
     // Salidas de la FSM
     assign S = ~a & ~b & ~Q2 & Q1 & Q0;
-    assign R = ~a & ~b& Q2 & Q1 & ~Q0;
+    assign R = ~a & ~b & Q2 & Q1 & ~Q0;
+
 endmodule
