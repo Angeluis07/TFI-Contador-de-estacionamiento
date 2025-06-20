@@ -29,7 +29,7 @@ module antirrebote (
     always @(posedge clk_slow) begin
         q1 <= btn_in;
         q2 <= q1;
-        btn_stable <= ~(q2 & q1); // Pulso de 1 ciclo en flanco de SUBIDA
+        btn_stable <= ~(q2 & q1); // La salida se pone en 1 cuando el botón está presionado y estable (activo bajo).
     end
 
 endmodule
