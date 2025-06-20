@@ -1,10 +1,10 @@
-`include "FFD.v"
+
 module FSM_3FFD_IOCars(
     input wire clk,
     input wire a, // Representa al primer par de sensores con respecto al ingreso del estacionamiento
     input wire b, // Representa al segundo par de sensores que se situarán despues de los A.
     output wire S,R // Representa a la operacion de suma o resta.Si un auto entra se le da la orden para sumarlo, si un auto sale se lo resta.
-)
+);
     wire D2, D1, D0; // Son las entradas a los 3 ff tipo D
     wire Q2, Q1, Q0; // Son las salidas de los 3 ff tipo D
 
