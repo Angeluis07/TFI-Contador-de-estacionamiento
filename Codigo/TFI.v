@@ -7,7 +7,7 @@ module TFI(
   output wire LED1,
   output wire LED0
 );
-
+/*
 wire clk_div;
 
 divisor_1khz div(
@@ -31,6 +31,23 @@ antirrebote debounce2(
   .btn_in(BTN4),
   .btn_stable(BTN4_debounced)
 );
+*/
+
+wire BTN1_debounced;
+debouncer debounce1(
+  .BTN(BTN1),
+  .clk(CLK),
+  .BTN_estable(BTN1_debounced)
+);
+
+wire BTN4_debounced;
+debouncer debounce2(
+  .BTN(BTN4),
+  .clk(CLK),
+  .BTN_estable(BTN4_debounced)
+);
+
+
 
 wire s;
 wire r;
