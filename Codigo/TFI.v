@@ -46,8 +46,8 @@ module TFI(
   // Instanciación de la máquina de estados finitos (FSM) que controla la entrada y salida de autos
   FSM_control_estacionamiento fsm(
     .clk(CLK),
-    .a(BTN1_debounced),
-    .b(BTN4_debounced),
+    .a(BTN1_estable),
+    .b(BTN4_estable),
     .S(s),
     .R(r)
   );
