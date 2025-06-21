@@ -35,14 +35,14 @@ antirrebote debounce2(
 
 wire BTN1_debounced;
 debouncer debounce1(
-  .BTN(BTN1),
+  .BTN(~BTN1),
   .clk(CLK),
   .BTN_estable(BTN1_debounced)
 );
 
 wire BTN4_debounced;
 debouncer debounce2(
-  .BTN(BTN4),
+  .BTN(~BTN4),
   .clk(CLK),
   .BTN_estable(BTN4_debounced)
 );
