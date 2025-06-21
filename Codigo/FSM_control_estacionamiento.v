@@ -5,13 +5,16 @@ module FSM_control_estacionamiento(
     input wire b, // Entrada que representa al 2do sensor del estacionamiento
     output wire S, // Salida que representa el ingreso de un auto al estacionamiento
     output wire R // Salida que represeta la salida de un auto del estacionamiento
+    output wire Q2, // Salida del flip-flop tipo D 2
+    output wire Q1, // Salida del flip-flop tipo D 1
+    output wire Q0 // Salida del flip-flop tipo D 0
 );
    
     // Entradas para los flip-flops tipo D
     wire D2, D1, D0;
 
      // Salidas de los flip-flops tipo D
-    wire Q2, Q1, Q0;
+    //wire Q2, Q1, Q0;
 
     // Implementación de la lógica combinacional para las entradas D de los flip-flops
     assign D2 = (b & Q2 & ~Q1) | (~a & b & ~Q1 & ~Q0) |
