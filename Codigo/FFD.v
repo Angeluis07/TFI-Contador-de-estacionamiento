@@ -1,4 +1,4 @@
-//caso FF tipo D sin set ni reset
+// Flip-Flop D activado por flanco de subida 
 module FF_D(
     input wire D,
     input wire clk,

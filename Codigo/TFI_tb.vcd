@@ -1,5 +1,5 @@
 $date
-	Fri Jun 20 14:05:27 2025
+	Sat Jun 21 18:41:49 2025
 $end
 $version
 	Icarus Verilog
@@ -8,38 +8,104 @@ $timescale
 	1ps
 $end
 $scope module TFI_tb $end
-$var wire 3 ! leds [2:0] $end
-$var reg 1 " clk $end
-$var reg 1 # r $end
-$var reg 1 $ s $end
+$var wire 1 ! LED_3 $end
+$var wire 1 " LED_2 $end
+$var wire 1 # LED_1 $end
+$var wire 1 $ LED_0 $end
+$var reg 1 % a $end
+$var reg 1 & b $end
+$var reg 1 ' clk $end
 $scope module UUT $end
-$var wire 1 % D0 $end
-$var wire 1 & D1 $end
-$var wire 1 ' D2 $end
-$var wire 1 " clk $end
-$var wire 1 # r $end
-$var wire 1 $ s $end
-$var wire 3 ( leds [2:0] $end
-$var wire 1 ) Q2 $end
-$var wire 1 * Q1 $end
-$var wire 1 + Q0 $end
+$var wire 1 % BTN1 $end
+$var wire 1 ( BTN1_debounced $end
+$var wire 1 & BTN4 $end
+$var wire 1 ) BTN4_debounced $end
+$var wire 1 ' CLK $end
+$var wire 1 ! LED3 $end
+$var wire 1 * s $end
+$var wire 1 + r $end
+$var wire 3 , leds [2:0] $end
+$var wire 1 " LED2 $end
+$var wire 1 # LED1 $end
+$var wire 1 $ LED0 $end
+$var wire 1 - BTN4_estable $end
+$var wire 1 . BTN1_estable $end
+$scope module antirebote_boton1 $end
+$var wire 1 / BTN $end
+$var wire 1 . BTN_estable $end
+$var wire 1 ' clk $end
+$var reg 1 0 btn_aux1 $end
+$var reg 1 1 btn_aux2 $end
+$var reg 17 2 contador [16:0] $end
+$upscope $end
+$scope module antirebote_boton4 $end
+$var wire 1 3 BTN $end
+$var wire 1 - BTN_estable $end
+$var wire 1 ' clk $end
+$var reg 1 4 btn_aux1 $end
+$var reg 1 5 btn_aux2 $end
+$var reg 17 6 contador [16:0] $end
+$upscope $end
+$scope module contador $end
+$var wire 1 7 D0 $end
+$var wire 1 8 D1 $end
+$var wire 1 9 D2 $end
+$var wire 1 ' clk $end
+$var wire 1 * s $end
+$var wire 1 + r $end
+$var wire 3 : leds [2:0] $end
+$var wire 1 ; Q2 $end
+$var wire 1 < Q1 $end
+$var wire 1 = Q0 $end
 $scope module ffd_0 $end
-$var wire 1 % D $end
-$var wire 1 , Qn $end
-$var wire 1 " clk $end
-$var reg 1 + Q $end
+$var wire 1 7 D $end
+$var wire 1 > Qn $end
+$var wire 1 ' clk $end
+$var reg 1 = Q $end
 $upscope $end
 $scope module ffd_1 $end
-$var wire 1 & D $end
-$var wire 1 - Qn $end
-$var wire 1 " clk $end
-$var reg 1 * Q $end
+$var wire 1 8 D $end
+$var wire 1 ? Qn $end
+$var wire 1 ' clk $end
+$var reg 1 < Q $end
 $upscope $end
 $scope module ffd_2 $end
-$var wire 1 ' D $end
-$var wire 1 . Qn $end
-$var wire 1 " clk $end
-$var reg 1 ) Q $end
+$var wire 1 9 D $end
+$var wire 1 @ Qn $end
+$var wire 1 ' clk $end
+$var reg 1 ; Q $end
+$upscope $end
+$upscope $end
+$scope module fsm $end
+$var wire 1 A D0 $end
+$var wire 1 B D1 $end
+$var wire 1 C D2 $end
+$var wire 1 + R $end
+$var wire 1 * S $end
+$var wire 1 ( a $end
+$var wire 1 ) b $end
+$var wire 1 ' clk $end
+$var wire 1 D Q2 $end
+$var wire 1 E Q1 $end
+$var wire 1 F Q0 $end
+$scope module ff0 $end
+$var wire 1 A D $end
+$var wire 1 G Qn $end
+$var wire 1 ' clk $end
+$var reg 1 F Q $end
+$upscope $end
+$scope module ff1 $end
+$var wire 1 B D $end
+$var wire 1 H Qn $end
+$var wire 1 ' clk $end
+$var reg 1 E Q $end
+$upscope $end
+$scope module ff2 $end
+$var wire 1 C D $end
+$var wire 1 I Qn $end
+$var wire 1 ' clk $end
+$var reg 1 D Q $end
+$upscope $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -49,468 +115,234 @@ $dumpall
 $end
 #0
 $dumpvars
-1.
-1-
-1,
+1I
+1H
+1G
+0F
+0E
+0D
+xC
+0B
+xA
+1@
+1?
+1>
+0=
+0<
+0;
+b0 :
+09
+08
+07
+b0 6
+05
+04
+13
+b0 2
+01
+00
+1/
+0.
+0-
+b0 ,
 0+
 0*
-0)
-b0 (
+z)
+z(
 0'
 0&
 0%
 0$
 0#
 0"
-b0 !
+0!
 $end
 #1000
-1"
+xB
+xI
+xG
+10
+14
+xD
+xF
+1'
 #2000
-0"
+0'
 #3000
-1"
+x7
+x+
+x*
+xH
+xE
+b1 6
+b1 2
+1'
 #4000
-0"
+0'
 #5000
-1%
-1"
-1$
+x8
+x>
+x$
+b10 2
+b10 6
+b0x ,
+b0x :
+x=
+1'
 #6000
-0"
+0'
 #7000
-0%
-1&
-0,
-b1 !
-b1 (
-1+
-1"
+x9
+x?
+x#
+b0xx ,
+b0xx :
+x<
+b11 6
+b11 2
+1'
 #8000
-0"
+0'
 #9000
-1%
-1&
-0-
-1,
-1*
-b10 !
-b10 (
-0+
-1"
+x@
+x"
+b100 2
+b100 6
+bx ,
+bx :
+x;
+1'
 #10000
-0%
-0"
-0$
+0/
+0'
+1%
 #11000
-1"
+b101 6
+00
+b0 2
+1'
 #12000
-0"
+0'
 #13000
-1"
+b1 2
+b110 6
+1'
 #14000
-0"
+0'
 #15000
-1%
-1"
-1$
+b111 6
+b10 2
+1'
 #16000
-0"
+0'
 #17000
-0&
-0%
+b11 2
+b1000 6
 1'
-0,
-b11 !
-b11 (
-1+
-1"
 #18000
-0"
+0'
 #19000
-1%
+b1001 6
+b100 2
 1'
-1,
-1-
-0.
-0+
-0*
-b100 !
-b100 (
-1)
-1"
 #20000
-0%
-0"
-0$
+03
+0'
+1&
 #21000
-1"
-#22000
-0"
-#23000
-1"
-#24000
-0"
-#25000
-1%
-1"
-1$
-#26000
-0"
-#27000
-0%
-1&
-0,
-b101 !
-b101 (
-1+
-1"
-#28000
-0"
-#29000
-1%
-1&
-0-
-1,
-1*
-b110 !
-b110 (
-0+
-1"
-#30000
-0%
-0"
-0$
-#31000
-1"
-#32000
-0"
-#33000
-1"
-#34000
-0"
-#35000
-1%
-1"
-1$
-#36000
-0"
-#37000
-0,
-b111 !
-b111 (
-1+
-1"
-#38000
-0"
-#39000
-1"
-#40000
-1%
-1&
-0"
-0$
-#41000
-1"
-#42000
-0"
-#43000
-1"
-#44000
-0"
-#45000
-1"
-1$
-#46000
-0"
-#47000
-1"
-#48000
-0"
-#49000
-1"
-#50000
-1%
-1&
-0"
-0$
-#51000
-1"
-#52000
-0"
-#53000
-1"
-#54000
-0"
-#55000
-1"
-1$
-#56000
-0"
-#57000
-1"
-#58000
-0"
-#59000
-1"
-#60000
-1%
-1&
-0"
-0$
-#61000
-1"
-#62000
-0"
-#63000
-1"
-#64000
-0"
-#65000
-1"
-1$
-#66000
-0"
-#67000
-1"
-#68000
-0"
-#69000
-1"
-#70000
-1%
-1&
-0"
-0$
-#71000
-1"
-#72000
-0"
-#73000
-1"
-#74000
-0"
-#75000
-0%
-1"
-1#
-#76000
-0"
-#77000
-1%
-0&
-1,
-b110 !
-b110 (
-0+
-1"
-#78000
-0"
-#79000
-0%
+b101 2
+04
+b0 6
 1'
-0,
-1-
-1+
-b101 !
-b101 (
-0*
-1"
-#80000
-1%
-0"
-0#
-#81000
-1"
-#82000
-0"
-#83000
-1"
-#84000
-0"
-#85000
-0%
-1"
-1#
-#86000
-0"
-#87000
-1%
-1&
+#22000
 0'
-1,
-b100 !
-b100 (
-0+
-1"
-#88000
-0"
-#89000
-0%
-1&
+#23000
+b1 6
+b110 2
+1'
+#24000
 0'
-1.
-0-
-0,
-0)
-1*
-b11 !
-b11 (
-1+
-1"
-#90000
-1%
-0"
-0#
-#91000
-1"
-#92000
-0"
-#93000
-1"
-#94000
-0"
-#95000
+#25000
+b111 2
+b10 6
+1'
+#26000
+0'
+#27000
+b11 6
+b1000 2
+1'
+#28000
+0'
+#29000
+b1001 2
+b100 6
+1'
+#30000
+1/
+0'
 0%
-1"
-1#
-#96000
-0"
-#97000
-1%
+#31000
+b101 6
+10
+b0 2
+1'
+#32000
+0'
+#33000
+b1 2
+b110 6
+1'
+#34000
+0'
+#35000
+b111 6
+b10 2
+1'
+#36000
+0'
+#37000
+b11 2
+b1000 6
+1'
+#38000
+0'
+#39000
+b1001 6
+b100 2
+1'
+#40000
+13
+0'
 0&
-1,
-b10 !
-b10 (
-0+
-1"
-#98000
-0"
-#99000
-0%
-0,
-1-
-1+
-b1 !
-b1 (
-0*
-1"
-#100000
-1%
-0"
-0#
-#101000
-1"
-#102000
-0"
-#103000
-1"
-#104000
-0"
-#105000
-0%
-1"
-1#
-#106000
-0"
-#107000
-1,
-b0 !
-b0 (
-0+
-1"
-#108000
-0"
-#109000
-1"
-#110000
-0"
-0#
-#111000
-1"
-#112000
-0"
-#113000
-1"
-#114000
-0"
-#115000
-1"
-1#
-#116000
-0"
-#117000
-1"
-#118000
-0"
-#119000
-1"
-#120000
-0"
-0#
-#121000
-1"
-#122000
-0"
-#123000
-1"
-#124000
-0"
-#125000
-1"
-1#
-#126000
-0"
-#127000
-1"
-#128000
-0"
-#129000
-1"
-#130000
-0"
-0#
-#131000
-1"
-#132000
-0"
-#133000
-1"
-#134000
-0"
-#135000
-1"
-1#
-#136000
-0"
-#137000
-1"
-#138000
-0"
-#139000
-1"
-#140000
-0"
-0#
-#141000
-1"
-#142000
-0"
-#143000
-1"
-#144000
-0"
-#145000
-1"
-1#
-#146000
-0"
-#147000
-1"
-#148000
-0"
-#149000
-1"
-#150000
-0"
-0#
+#41000
+b101 2
+14
+b0 6
+1'
+#42000
+0'
+#43000
+b1 6
+b110 2
+1'
+#44000
+0'
+#45000
+b111 2
+b10 6
+1'
+#46000
+0'
+#47000
+b11 6
+b1000 2
+1'
+#48000
+0'
+#49000
+b1001 2
+b100 6
+1'
+#50000
+0'
