@@ -75,19 +75,19 @@ module TFI(
 
   // Registro para controlar el parpadeo del LED3
   // Con 25 bits puedo contar hasta 33,554,432 ciclos
-  reg [25:0] contador = 0; //Utilizado para contar los ciclos de reloj
+  reg [25:0] contador2 = 0; //Utilizado para contar los ciclos de reloj
   reg parpadeo = 0;
 
   always @(posedge CLK) begin
     if (leds == 3'b111) begin
-      if (contador >= dos_segundos - 1) begin
-        contador <= 0;
+      if (contador2 >= dos_segundos - 1) begin
+        contador2 <= 0;
         parpadeo <= ~parpadeo;
       end else begin
-        contador <= contador + 1;
+        contador2 <= contador2 + 1;
       end
-    end else begin // Nos aseguramos que el LED3 se apague y se reinicie el contador
-      contador <= 0;
+    end else begin // Nos aseguramos que el LED3 se apague y se reinicie el contador2
+      contador2 <= 0;
       parpadeo <= 0;
     end
   end
