@@ -18,8 +18,8 @@ module TFI(
   input BTN1, // Entrada que repesenta al par de sensores 'a' del estacionamiento
   input BTN4, // Entrada que repreesnta al par de sensores 'b' del estacionamiento
   // Salidas para los LEDs que indican el estado del estacionamiento
-  output reg LED3,
-  output wire LED2, 
+  output wire LED3,
+  output wire LED2,
   output wire LED1,
   output wire LED0
 );
@@ -28,7 +28,7 @@ module TFI(
 
   wire BTN1_estable; // Botón 1 estabilizado (sensor a)
   // Instanciación del módulo debouncer para estabilizar la señal del botón 1
-  antirebote antirebote_boton1( 
+  antirebote antirebote_boton1(
     .BTN(~BTN1),
     .clk(CLK),
     .BTN_estable(BTN1_estable)
