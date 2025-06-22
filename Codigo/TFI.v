@@ -69,28 +69,30 @@ module TFI(
   assign LED1 = leds[1];
   assign LED0 = leds[0];
 
-  // Parámetro para calcular el número de ciclos de 2 segundos (ajusta según tu frecuencia de CLK)
-  parameter CLK_FREQ = 12000000; // 12 MHz, cambia esto según tu placa
-  parameter TWO_SEC_COUNT = CLK_FREQ * 2;
+  // Parámetros para calcular el número de ciclos de 2 segundos
+  parameter CLK_FREQ = 12000000; // 12MHz, son 12.000.000 ciclos por segundo
+  parameter dos_segundos = CLK_FREQ * 2; // 2 segundos en ciclos de reloj
 
-  reg [31:0] counter = 0;
-  reg blink = 0;
+  // Registro para controlar el parpadeo del LED3
+  // Con 25 bits puedo contar hasta 33,554,432 ciclos
+  reg [25:0] contador = 0; //Utilizado para contar los ciclos de reloj
+  reg parpadeo = 0;
 
   always @(posedge CLK) begin
     if (leds == 3'b111) begin
-      if (counter >= TWO_SEC_COUNT - 1) begin
-        counter <= 0;
-        blink <= ~blink;
+      if (contador >= dos_segundos - 1) begin
+        contador <= 0;
+        parpadeo <= ~parpadeo;
       end else begin
-        counter <= counter + 1;
+        contador <= contador + 1;
       end
-    end else begin
-      counter <= 0;
-      blink <= 0;
+    end else begin // Nos aseguramos que el LED3 se apague y se reinicie el contador
+      contador <= 0;
+      parpadeo <= 0;
     end
   end
 
   // LED3 titila solo cuando leds == 3'b111
-  assign LED3 = (leds == 3'b111) ? blink : 1'b0;
+  assign LED3 = (leds == 3'b111) ? parpadeo : 1'b0;
 
 endmodule
