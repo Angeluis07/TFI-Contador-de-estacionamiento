@@ -24,8 +24,6 @@ module TFI(
   output wire LED0
 );
 
-  reg clk_led3 = 0; // Reloj de la edu-ciaa-fpga
-
   wire BTN1_estable; // Botón 1 estabilizado (sensor a)
   // Instanciación del módulo debouncer para estabilizar la señal del botón 1
   antirebote antirebote_boton1(
@@ -63,7 +61,6 @@ module TFI(
     .s(s),
     .leds(leds)
   );
-  
 
   assign LED2 = leds[2];
   assign LED1 = leds[1];
